@@ -7,6 +7,7 @@ import MultiOptionsCard from "../../components/MultiOptionsCard";
 import TripDetailsMessage from "../../components/TripDetailsMessage";
 import DirectExpenseReport from "../../components/DirectExpenseReport";
 import IndirectExpenseReport from "../../components/IndirectExpenseReport";
+import ServiceExpenseChart from "../../components/ServiceExpenseChart";
 
 function App() {
   const [userName, setUserName] = useState(
@@ -232,7 +233,7 @@ function App() {
         {
           value: "service_expense_by_vehicles",
           label: "Service expense by vehicles",
-          trigger: "indirectExpenseResult"
+          trigger: "serviceExpenseChart"
         },
         {
           value: "emi_loan_expense_by_vehicles",
@@ -245,6 +246,11 @@ function App() {
           trigger: 'multiOptions'
         }
       ],
+    },
+    {
+      id: 'serviceExpenseChart',
+      component: <ServiceExpenseChart />,
+      trigger: 'indirectExpenseOptions'
     },
     {
       id: "indirectExpenseResult",

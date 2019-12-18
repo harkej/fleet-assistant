@@ -15,6 +15,7 @@ const IndirectExpenseReport = ({ previousStep }) => {
     }
     fetchData();
   }, [previousStep.value]);
+  
   return (
     <div>
       Indirect expense report
