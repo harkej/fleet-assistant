@@ -1,20 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-
 const TripDetailsMessage = ({ previousStep }) => {
   const [tripDetails, setTripDetails] = useState({});
   const [brandName, setBrandName] = useState("");
@@ -41,7 +26,7 @@ const TripDetailsMessage = ({ previousStep }) => {
     <div style={{ width: "100%" }}>
       <h3>
         Summary for{" "}
-        {`${MONTHS[tripDetails.Trip_Month - 1]} ${tripDetails.Trip_Year}`}
+        {`${tripDetails.Trip_Month} ${tripDetails.Trip_Year}`}
       </h3>
       <table>
         <tbody>

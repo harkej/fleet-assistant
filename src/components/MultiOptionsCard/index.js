@@ -33,10 +33,12 @@ const optionsData = [
       {
         id: 22,
         title: 'Indirect Expense',
+        trigger: 'indirectExpenseOptionsPrompt'
       },
       {
         id: 23,
         title: 'Direct Expense',
+        trigger: 'directExpenseOptionsPrompt'
       },
     ],
   },

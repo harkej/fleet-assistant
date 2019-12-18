@@ -19,3 +19,15 @@
 .rsc .rsc-ts-bot {
   text-align: left;
 }
+
+.rsc-os-options {
+  display: flex;
+  white-space: nowrap;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.rsc-os-options::-webkit-scrollbar {
+  width: 0 !important;
+}

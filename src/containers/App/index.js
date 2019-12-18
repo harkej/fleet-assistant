@@ -5,6 +5,8 @@ import SummaryCard from "../../components/SummaryCard";
 import "./style.css";
 import MultiOptionsCard from "../../components/MultiOptionsCard";
 import TripDetailsMessage from "../../components/TripDetailsMessage";
+import DirectExpenseReport from "../../components/DirectExpenseReport";
+import IndirectExpenseReport from "../../components/IndirectExpenseReport";
 
 function App() {
   const [userName, setUserName] = useState(
@@ -160,13 +162,94 @@ function App() {
           value: "trip_all_details",
           label: "All trip details",
           trigger: "tripDetailsResult"
+        },
+        {
+          value: 'go_back',
+          label: 'Go back',
+          trigger: 'multiOptions'
         }
       ]
     },
     {
       id: "tripDetailsResult",
       component: <TripDetailsMessage />,
-      asMessage: true
+      asMessage: true,
+      trigger: 'tripDetailsOptions'
+    },
+    {
+      id: "directExpenseOptionsPrompt",
+      message: "Select an option below",
+      trigger: "directExpenseOptions"
+    },
+    {
+      id: "directExpenseOptions",
+      options: [
+        {
+          value: "this month",
+          label: "Current month",
+          trigger: "directExpenseResult"
+        },
+        {
+          value: "this year",
+          label: "Current year",
+          trigger: "directExpenseResult"
+        },
+        {
+          value: 'go_back',
+          label: 'Go back',
+          trigger: 'multiOptions'
+        }
+      ],
+    },
+    {
+      id: "directExpenseResult",
+      component: <DirectExpenseReport />,
+      trigger: 'directExpenseOptions'
+    },
+    {
+      id: "indirectExpenseOptionsPrompt",
+      message: "Select an option below",
+      trigger: "indirectExpenseOptions"
+    },
+    {
+      id: "indirectExpenseOptions",
+      options: [
+        {
+          value: "breakup_by_vehicles",
+          label: "Breakup by vehicles",
+          trigger: "indirectExpenseResult"
+        },
+        {
+          value: "breakup_by_expense_category",
+          label: "Breakup by expense category",
+          trigger: "indirectExpenseResult"
+        },
+        {
+          value: "indirect_expense",
+          label: "Indirect expense",
+          trigger: "indirectExpenseResult"
+        },
+        {
+          value: "service_expense_by_vehicles",
+          label: "Service expense by vehicles",
+          trigger: "indirectExpenseResult"
+        },
+        {
+          value: "emi_loan_expense_by_vehicles",
+          label: "EMI loan expense by vehicles",
+          trigger: "indirectExpenseResult"
+        },
+        {
+          value: 'go_back',
+          label: 'Go back',
+          trigger: 'multiOptions'
+        }
+      ],
+    },
+    {
+      id: "indirectExpenseResult",
+      component: <IndirectExpenseReport />,
+      trigger: 'indirectExpenseOptions'
     }
   ];
   return (
