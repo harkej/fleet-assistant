@@ -1,0 +1,5 @@
+.summary-table-row {
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}

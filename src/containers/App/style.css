@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.rsc {
+  height: 100vh;
+}
+
+.rsc > div {
+  display: flex;
+  flex-flow: column;
+}
+
+.rsc > div > div:nth-child(2) {
+  flex-grow: 1;
+}
+
+.rsc .rsc-ts-bot {
+  text-align: left;
+}
